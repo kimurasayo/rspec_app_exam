@@ -3,7 +3,7 @@ require 'rails_helper'
 RSpec.describe 'Task', type: :system do
   describe 'Task一覧' do
       let(:project) { create(:project) }
-      let!(:task) { create(:task, project_id: project.id) }
+      let!(:task) { create(:task) }
 
     context '正常系' do
       it '一覧ページにアクセスした場合、Taskが表示されること' do
@@ -45,7 +45,7 @@ RSpec.describe 'Task', type: :system do
 
   describe 'Task詳細' do
     let(:project) { create(:project) }
-    let(:task) { create(:task, project_id: project.id) }
+    let(:task) { create(:task) }
 
     context '正常系' do
       it 'Taskが表示されること' do
@@ -61,7 +61,7 @@ RSpec.describe 'Task', type: :system do
 
   describe 'Task編集' do
     let(:project) { create(:project) }
-    let(:task) { create(:task, project_id: project.id) }
+    let(:task) { create(:task) }
 
     context '正常系' do
       it 'Taskを編集した場合、一覧画面で編集後の内容が表示されること' do
@@ -99,7 +99,7 @@ RSpec.describe 'Task', type: :system do
 
   describe 'Task削除' do
     let(:project) { create(:project) }
-    let(:task) { create(:task, project_id: project.id) }
+    let(:task) { create(:task) }
 
     context '正常系' do
       # FIXME: テストが失敗するので修正してください
